@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "2665601_ErinN_0213-2000-7b88f1a2e1bd40bba7070fc01476cf3d-2dc30a79ccb44ea2991715d6321d5675.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

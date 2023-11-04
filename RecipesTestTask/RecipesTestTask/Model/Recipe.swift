@@ -8,7 +8,7 @@
 import UIKit
 
 struct Recipe {
-    let image : UIImage?
+    let image : UIImage //= UIImage(named: "recipe1") ?? UIImage()
     let name : String
     let ingridients : String = ""
     let instructions : String = ""

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "easy-no-bake-desserts-oreo-pie-645d1a6b9c9d7.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
