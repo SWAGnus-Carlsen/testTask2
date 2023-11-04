@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		122403A02AF65AC1003CF511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1224039F2AF65AC1003CF511 /* AppDelegate.swift */; };
 		122403A22AF65AC1003CF511 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122403A12AF65AC1003CF511 /* SceneDelegate.swift */; };
-		122403A42AF65AC1003CF511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122403A32AF65AC1003CF511 /* ViewController.swift */; };
-		122403A72AF65AC1003CF511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122403A52AF65AC1003CF511 /* Main.storyboard */; };
+		122403A42AF65AC1003CF511 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122403A32AF65AC1003CF511 /* MainPageController.swift */; };
 		122403A92AF65AC3003CF511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122403A82AF65AC3003CF511 /* Assets.xcassets */; };
 		122403AC2AF65AC3003CF511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122403AA2AF65AC3003CF511 /* LaunchScreen.storyboard */; };
+		122403B52AF6603F003CF511 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 122403B42AF6603F003CF511 /* SnapKit */; };
+		122403B72AF6603F003CF511 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 122403B62AF6603F003CF511 /* SnapKit-Dynamic */; };
+		122403B92AF6610C003CF511 /* RecipesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122403B82AF6610C003CF511 /* RecipesCVCell.swift */; };
+		122403BB2AF66201003CF511 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122403BA2AF66201003CF511 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1224039C2AF65AC0003CF511 /* RecipesTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1224039F2AF65AC1003CF511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122403A12AF65AC1003CF511 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		122403A32AF65AC1003CF511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		122403A62AF65AC1003CF511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		122403A32AF65AC1003CF511 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		122403A82AF65AC3003CF511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122403AB2AF65AC3003CF511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		122403AD2AF65AC3003CF511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		122403B82AF6610C003CF511 /* RecipesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCVCell.swift; sourceTree = "<group>"; };
+		122403BA2AF66201003CF511 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122403B52AF6603F003CF511 /* SnapKit in Frameworks */,
+				122403B72AF6603F003CF511 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +62,56 @@
 		1224039E2AF65AC1003CF511 /* RecipesTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				1224039F2AF65AC1003CF511 /* AppDelegate.swift */,
-				122403A12AF65AC1003CF511 /* SceneDelegate.swift */,
-				122403A32AF65AC1003CF511 /* ViewController.swift */,
-				122403A52AF65AC1003CF511 /* Main.storyboard */,
-				122403A82AF65AC3003CF511 /* Assets.xcassets */,
-				122403AA2AF65AC3003CF511 /* LaunchScreen.storyboard */,
+				122403BC2AF662BE003CF511 /* View */,
+				122403BD2AF662D6003CF511 /* Model */,
+				122403BF2AF66313003CF511 /* AppDelegates */,
+				122403C02AF6633A003CF511 /* Resources */,
 				122403AD2AF65AC3003CF511 /* Info.plist */,
 			);
 			path = RecipesTestTask;
+			sourceTree = "<group>";
+		};
+		122403BC2AF662BE003CF511 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				122403A32AF65AC1003CF511 /* MainPageController.swift */,
+				122403BE2AF662F1003CF511 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		122403BD2AF662D6003CF511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				122403BA2AF66201003CF511 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		122403BE2AF662F1003CF511 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				122403B82AF6610C003CF511 /* RecipesCVCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		122403BF2AF66313003CF511 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				1224039F2AF65AC1003CF511 /* AppDelegate.swift */,
+				122403A12AF65AC1003CF511 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		122403C02AF6633A003CF511 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				122403A82AF65AC3003CF511 /* Assets.xcassets */,
+				122403AA2AF65AC3003CF511 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +130,10 @@
 			dependencies = (
 			);
 			name = RecipesTestTask;
+			packageProductDependencies = (
+				122403B42AF6603F003CF511 /* SnapKit */,
+				122403B62AF6603F003CF511 /* SnapKit-Dynamic */,
+			);
 			productName = RecipesTestTask;
 			productReference = 1224039C2AF65AC0003CF511 /* RecipesTestTask.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 122403932AF65AC0003CF511;
+			packageReferences = (
+				122403B32AF6603F003CF511 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1224039D2AF65AC0003CF511 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +181,6 @@
 			files = (
 				122403AC2AF65AC3003CF511 /* LaunchScreen.storyboard in Resources */,
 				122403A92AF65AC3003CF511 /* Assets.xcassets in Resources */,
-				122403A72AF65AC1003CF511 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +191,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122403A42AF65AC1003CF511 /* ViewController.swift in Sources */,
+				122403A42AF65AC1003CF511 /* MainPageController.swift in Sources */,
 				122403A02AF65AC1003CF511 /* AppDelegate.swift in Sources */,
+				122403B92AF6610C003CF511 /* RecipesCVCell.swift in Sources */,
 				122403A22AF65AC1003CF511 /* SceneDelegate.swift in Sources */,
+				122403BB2AF66201003CF511 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		122403A52AF65AC1003CF511 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				122403A62AF65AC1003CF511 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		122403AA2AF65AC3003CF511 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +344,6 @@
 				INFOPLIST_FILE = RecipesTestTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +371,6 @@
 				INFOPLIST_FILE = RecipesTestTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +408,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		122403B32AF6603F003CF511 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		122403B42AF6603F003CF511 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 122403B32AF6603F003CF511 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		122403B62AF6603F003CF511 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 122403B32AF6603F003CF511 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 122403942AF65AC0003CF511 /* Project object */;
 }
