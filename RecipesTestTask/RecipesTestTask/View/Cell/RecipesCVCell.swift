@@ -10,7 +10,6 @@ import UIKit
 
 final class RecipesCVCell: UICollectionViewCell {
     
-    //MARK: Properties
     static let identifier = String(describing: RecipesCVCell.self)
     
     //MARK: UI Elements
@@ -30,33 +29,37 @@ final class RecipesCVCell: UICollectionViewCell {
         return imageView
     }()
     
+    //MARK: Override variables
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                contentView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                contentView.layer.borderColor = AppearenceManager.shared.foregroundColor.cgColor
+            }
+        }
+    }
     
     //MARK: Override methods
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(imageView)
-        contentView.backgroundColor = UIColor(named: "BackGround")
-        contentView.layer.borderColor = UIColor(named: "ForeGround")?.cgColor
-        contentView.layer.borderWidth = 1
-        nameLabel.textColor = UIColor(named: "ForeGround")
-        contentView.layer.cornerRadius = contentView.frame.height / 8
-        contentView.clipsToBounds = true
-        //imageView.layer.cornerRadius = contentView.layer.cornerRadius
-        
+        setupCell()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageView.frame = CGRect (x: 0,
-                                     y: 0,
-                                     width: contentView.frame.size.width,
-                                     height: contentView.frame.size.height * 2/3)
-        nameLabel.frame = CGRect (x: 0,
-                                     y: imageView.frame.maxY,
-                                     width: contentView.frame.size.width,
-                                     height: contentView.frame.size.height * 1/3)
-        
+        imageView.frame = CGRect (
+            x: 0,
+            y: 0,
+            width: contentView.frame.size.width,
+            height: contentView.frame.size.height * 2/3
+        )
+        nameLabel.frame = CGRect (
+            x: 0,
+            y: imageView.frame.maxY,
+            width: contentView.frame.size.width,
+            height: contentView.frame.size.height * 1/3
+        )
         
     }
     
@@ -64,8 +67,7 @@ final class RecipesCVCell: UICollectionViewCell {
         super.prepareForReuse()
         imageView.image = nil
         nameLabel.text = nil
-        contentView.layer.borderColor = UIColor(named: "ForeGround")?.cgColor
-       
+        contentView.layer.borderColor = AppearenceManager.shared.foregroundColor.cgColor
     }
     
 
@@ -80,6 +82,17 @@ final class RecipesCVCell: UICollectionViewCell {
     ) {
         imageView.image = image
         nameLabel.text = name
+    }
+    
+    private func setupCell() {
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(imageView)
+        contentView.backgroundColor = AppearenceManager.shared.backgroundColor
+        contentView.layer.borderColor = AppearenceManager.shared.foregroundColor.cgColor
+        contentView.layer.borderWidth = 2
+        nameLabel.textColor = AppearenceManager.shared.foregroundColor
+        contentView.layer.cornerRadius = contentView.frame.height / 8
+        contentView.clipsToBounds = true
     }
     
    
